@@ -1,0 +1,16 @@
+.blog-title{
+  text-align: center;
+}
+
+.blogContainer {
+  padding: 20px 30px;
+}
+
+.textComment {
+  display: inline-block;
+}
+
+.add-button {
+  display: inline-block;
+  padding-left: 50px;
+}

@@ -1,0 +1,39 @@
+<h2 class="blog-title"> Blog</h2>
+
+<div class="blogContainer">
+  <h4>Add New Comment</h4>
+  <div class="textComment">
+    <textarea rows="5" cols="50" placeholder="Create comment" [(ngModel)]="textAreaValue"></textarea>
+  </div>
+
+  <div class="add-button">
+    <button type="button" class="btn btn-primary" (click)="addComment()">
+      Add Comment
+    </button>
+  </div>
+</div>
+
+<div class="blogContainer">
+  <h4> Display comments</h4>
+  <button type="button" class="btn btn-primary" (click)="displayComment()"> Display</button>
+
+  <ul *ngIf="displayList">
+    <li *ngFor="let comment of comments">
+      <span>ID: {{comment.id}} Comment:  {{comment.comment}}</span>
+      <input #updatedComment>
+      <button class="btn btn-default" (click)="editComment(comment, updatedComment.value)">Edit</button>
+      <button class="btn btn-danger" (click)="deleteComment(comment)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<div class="blogContainer">
+  <h4>Display comment by ID</h4>
+  <input #idComment>
+  <button class="btn btn-primary" (click)="displayCommentById(idComment.value)">Display</button>
+  <span *ngIf="displayCommentByID">ID: {{displayedComment.id}} || Comment:  {{displayedComment.comment}}</span>
+  <span *ngIf="!displayCommentByID">{{errorMessage}}</span>
+</div>
+
+
+
